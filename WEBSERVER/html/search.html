@@ -1,0 +1,85 @@
+{{ define "search" }}
+
+
+
+<p>Search Bereich</p>
+<center>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+<label class="btn btn-light btn-secondary active">
+<input id ="Used" type="radio" name="options" id="option1" autocomplete="off" checked> Used
+</label>
+<label class="btn-light btn btn-secondary">
+<input type="radio" name="options" id="option2" autocomplete="off"> New
+</label>
+
+</div>
+<br>
+<div class="input-group mb-3 col-lg-5">
+
+<input type="text" name ="input" id = "search_text" method="post" class="form-control" placeholder="Ebay Item" aria-label="Recipient's username" aria-describedby="basic-addon2">
+
+<button id = "search_button" class="btn btn-outline-secondary" type="button">Search</button>
+<div class="input-group-append">
+    
+
+</div>
+</div>
+
+     
+<p id ="result"></p>
+</center>
+
+
+<script>
+
+  // Get the button, and when the user clicks on it, execute myFunction
+    document.getElementById("search_button").onclick = function() {myFunction()};
+   var checkbox;
+
+
+    /* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+    function myFunction() {
+
+    if ($('#Used').is(':checked')) {
+
+    checkbox = "Used"
+
+   }else
+   {
+
+    checkbox = "New"
+   }
+
+
+
+       document.getElementById("result").innerHTML = "Bitte warten... ";  
+        console.log("geclickt")
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("POST","/bruse", true);
+	//xmlhttp.open("GET","/bruse",true);
+        
+	xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        
+
+	   if ( this.responseText == 0){
+
+                document.getElementById("result").innerHTML ="Keine Suchergebnisse!";
+
+       }else{
+
+        document.getElementById("result").innerHTML = this.responseText + "€";
+       }
+
+
+        
+            // var myArr = JSON.parse(this.responseText);
+            // console.log(myArr)
+        }
+        };
+        xmlhttp.send(document.getElementById('search_text').value+" "+checkbox);
+	console.log(document.getElementById('search_text').value+" "+checkbox)
+}
+</script>
+
+{{ end }}

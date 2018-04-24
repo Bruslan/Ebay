@@ -1,0 +1,6 @@
+{
+  "Address"			: "0.0.0.0:80",
+  "AddressSSL"		: "0.0.0.0:443",
+  "Redirect"		: "https://0.0.0.0:443",
+  "Static" 			: "cssjs"
+}

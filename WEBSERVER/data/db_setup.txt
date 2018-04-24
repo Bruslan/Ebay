@@ -1,0 +1,42 @@
+CREATE KEYSPACE IF NOT EXISTS user_keyspace WITH replication = {'class': 'SimpleStrategy', 'replication_factor' : 1};
+CREATE TABLE IF NOT EXISTS user_keyspace.users(
+	id uuid,
+	username text,
+	first_name text,
+	last_name text,
+	email text,
+	pass text,
+	country text,
+	birthday timestamp,
+	created_at timestamp,
+	PRIMARY KEY (id)
+);
+CREATE TABLE IF NOT EXISTS user_keyspace.sessions(
+	uuid text,
+	user_id uuid,
+	created_at timestamp,
+	device text,
+	active boolean,
+	PRIMARY KEY (uuid)
+);
+CREATE TABLE IF NOT EXISTS user_keyspace.threads(
+	id uuid,
+	topic text,
+	user_id int,
+	created_at timestamp,
+	PRIMARY KEY (id)
+);
+CREATE TABLE IF NOT EXISTS user_keyspace.posts(
+	id uuid,
+	body text,
+	user_id int,
+	thread_id int,
+	created_at timestamp,
+	PRIMARY KEY (id)
+);
+
+CREATE INDEX ON user_keyspace.users (username);
+CREATE INDEX ON user_keyspace.users (email);
+
+CREATE INDEX ON user_keyspace.sessions (user_id);
+

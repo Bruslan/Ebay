@@ -1,0 +1,63 @@
+{{ define "layout"}}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>IANZN</title>
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="/assets/css/bootstrap.min.css" type="text/css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+  </head>
+  <body>
+		<br>
+		<div class="container">
+		<!-- Nav tabs -->
+		  <nav class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+		    <a class="nav-item nav-link active" id="nav-terms-tab" data-toggle="tab" href="#nav-terms" role="tab" aria-controls="nav-terms" aria-selected="true">Terms and Conditions</a>
+		    <a class="nav-item nav-link" id="nav-privacy-tab" data-toggle="tab" href="#nav-privacy" role="tab" aria-controls="nav-privacy" aria-selected="false">Privacy Policy</a>
+		    <a class="nav-item nav-link" id="nav-thirdparty-tab" data-toggle="tab" href="#nav-thirdparty" role="tab" aria-controls="nav-thirdparty" aria-selected="false">Third-party software</a>
+		  </nav>
+
+			<div class="tab-content" id="nav-tabContent">
+				<!-- terms and conditions -->
+				<div class="tab-pane fade show active" id="nav-terms" role="tabpanel" aria-labelledby="nav-terms-tab">
+				  <br>
+				  {{ template "termsconds" . }}
+				  <br>
+				</div>
+
+				<!-- privacy policy -->
+				<div class="tab-pane fade" id="nav-privacy" role="tabpanel" aria-labelledby="nav-privacy-tab">
+				  <br>
+				  {{ template "privacy" . }}
+				  <br>
+				</div>
+				<!-- third party -->
+				<div class="tab-pane fade" id="nav-thirdparty" role="tabpanel" aria-labelledby="nav-thirdparty-tab">
+				  <br>
+				  {{ template "thirdparty" . }}
+				  <br>
+				</div>
+			</div>
+
+			<br>
+			<p>There is more to come soon.</p>
+
+			<a href="/">Return Home</a>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+    <!-- <script src="/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script type="/assets/js/popper.min.js"></script> -->
+  </body>
+</html>
+
+{{ end }}

@@ -1,0 +1,39 @@
+{{ define "navbar" }}
+<br>
+<div class="container">
+<!-- Nav tabs -->
+  <nav class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+   
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+
+    <!-- Home -->
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+      <br>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container text-center">
+          <h1 class="display-3">E B A Y</h1>
+          <p class="lead">Welcome Everyone</p>
+	             {{ template "search" .}}
+        </div>
+      </div>
+      <!-- {{ if true }} --> <!-- true can be the argument, but the an comparison has to passed to t.execute -->
+        <!-- <p class="lead">parameter is {{ . }}</p>
+      {{ end }} -->
+      
+    </div>
+
+    <!-- Contact -->
+    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+      <br>
+      <div>Contact information will be available soon.</div>
+      <br>
+    </div>
+
+    
+  </div>
+</div>
+<br>
+{{ end }}

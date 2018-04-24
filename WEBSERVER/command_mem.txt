@@ -1,0 +1,54 @@
+## Postgres Commands:
+
+'psql --u username' 			-- login to postgres console
+'psql -U postjansen -d jansendb' -- connect to db
+'\q' 							-- quit postgres console
+'\dt' 							-- show all tables
+'\dt *.*' 						-- list all tables
+'show data_directory;'			-- see where the data directory is
+'show all;' 					-- see all the run-time parameters
+'SELECT * FROM pg_tablespace;' 	-- create tablespaces to store database objects in other parts of the filesystem. To see tablespaces, which might not be in that data directory
+'\list' or '\l' 				-- list all database
+'\h' 							-- help in psql console
+
+'sudo createdb -O postjansen -U postjansen jansendb' -- creates database
+'psql -f setup.sql -d jansendb -U postjansen' -- creates tables on database
+
+
+## Cassandra Commands:
+DROP KEYSPACE IF EXISTS user_keyspace;
+SELECT * FROM user_keyspace.sessions;
+SELECT * FROM user_keyspace.users;
+SELECT * FROM user_keyspace.sessions WHERE user_id=d16fcc22-a473-4be6-a125-96455df5f7a8 ALLOW FILTERING;
+SELECT * FROM user_keyspace.sessions WHERE user_id='d16fcc22-a473-4be6-a125-96455df5f7a8';
+DESC TABLE user_keyspace.users;
+DESC KEYSPACE user_keyspace;
+DESC KEYSPACES;
+
+cqlsh -u ianzndb -p Lov3toN8t
+cqlsh -f /home/jansen/go/src/github.com/ianzn.com/data/db_setup.txt -u ianzndb -p Lov3toN8t
+
+
+## Docker Commands:
+
+
+
+
+
+
+## Linux Commands:
+
+'su' 					-- switch to root
+'su username'(jp39, postjansen)		-- switch to specific user
+	+ requires pw of user
+'sudo command' 				-- root privileges
+	+ requires pw of user
+'chmod 700 filename/dirname'		-- changes permissions
+'mkdir dirname'				-- create directory
+'touch filename'			-- create file
+'ssh...with port etc'
+
+
+## Go Testing:
+'go test -v -cover' 		-- runs all test in package with coverage(-coverage) and verbose(-v) for more information
+'' 
